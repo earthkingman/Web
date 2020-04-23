@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API 연습</title>
+</head>
+
+<body>dy
+
+    <p id=content> </p>
+    <p> </p>
+
+    <div>
+
+        <input type="text" id=book>
+        <input type="button" onclick="getBookName();" value="책이름을 적어주세요">
+
+
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script>
+        var bookname
+
+        function getBookName() {
+            bookname = $('#book').val();
+            $.ajax({
+                    method: "GET",
+                    url: "https://dapi.kakao.com/v3/search/book?target=title",
+                    data: {
+                        query: bookname
+                    },
+                    headers: {
+                        Authorization: "KakaoAK 72c71d1a15c5c5b968ef9c993298d7fe"
+                    }
+
+                })
+                .done(function(msg) {
+                    alert("Data Saved: " + msg);
+                    console.log(msg.documents[0].title);
+                    console.log(msg.documents[0].thumbnail);
+                    $("#content").append("<strong>" + msg.documents[0].title + "</strong>");
+                    $("#content").append("<img src='" + msg.documents[0].thumbnail + "'/>");
+
+
+                });
+
+
+
+
+
+
+        }
+    </script>
+
+
+</body>
+
+
+</html>

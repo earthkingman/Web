@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API 연습</title>
+</head>
+
+<body>
+
+    <p id=hh> </p>
+    <p> </p>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+    <script>
+        var a = "경상남도 창원시 성산구 사파동";
+        var arrNumber = new Array(); //배열선언
+
+        $.ajax({
+            method: "GET",
+            url: "https://8oi9s0nnth.apigw.ntruss.com/corona19-masks/v1/storesByAddr/json?address=부산광역시 사상구",
+            success: function(data) {
+                console.log(data);
+                
+            }
+        })
+    </script>
+
+
+</body>
+
+
+</html>
