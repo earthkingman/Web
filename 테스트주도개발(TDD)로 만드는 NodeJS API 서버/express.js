@@ -5,20 +5,21 @@
 // dependencies에 는 express 등등 분류가 되어있음 실제 서비스가 돌아갈때 필요한 모듈
 
 const express = require('express')
+const logger = require('morgan')
 const app = express()
-const port = 3000
-const users = [{name : 'Alice'}]
+const users = [
+  {id : 1, name : 'Alice'},
+  {id : 2, name : 'Bek'},
+  {id : 3, name : 'Chris'}
+]
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
 app.get('/users', (req, res)=> {
+
     res.send(users);
 })
-
-// app.listen(port, () => {
-//   console.log(`Example app listening at http://localhost:${port}`)
-// })
 
 module.exports = app
