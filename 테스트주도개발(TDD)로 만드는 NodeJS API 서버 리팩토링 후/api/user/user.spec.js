@@ -3,7 +3,7 @@
 const assert = require('assert') //node 기본 모듈
 const should = require('should')
 const request = require('supertest')
-const app = require('.') //express 파일에서 가져옴
+const app = require('../../index.js') //express 파일에서 가져옴
 
 describe('GET /users', () => {
     describe('성공', () => {

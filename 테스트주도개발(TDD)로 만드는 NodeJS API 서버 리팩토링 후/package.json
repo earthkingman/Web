@@ -11,7 +11,7 @@
   },
   "scripts": {
     "start": "node ./bin/www.js",
-    "test": "mocha ./index.spec.js"
+    "test": "mocha ./api/**/*.spec.js"
   },
   
   "author": "",
