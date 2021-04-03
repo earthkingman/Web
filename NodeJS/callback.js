@@ -1,9 +1,13 @@
-'use strict';
+function atask(a,n){
+    setTimeout(function () {
+    console.log("대기")
+    test(n)
+    }, 1000);
+    
+}
 
+function test(num) {
+    console.log(num);
+}
 
-console.log('1');
-setTimeout(function() {
-    console.log('2');
-},1000);
-
-console.log('3');
+atask(test,1);
